@@ -29,7 +29,7 @@ Clone this repository in a local directory on your computer. Confirm that the `c
 
 ## Usage
 
-Replace the placeholder sender email address with your own email address. Also replace your name with the placeholder in the body of the email. For ease of use, you can search for `***` and replace with the correct information. Run the `mitcap_reachouts.py`. For every email the script wants to send, your CLI will print the outgoing message and prompt you to enter `y` or `n` before sending the email.
+Replace the placeholder sender email address with your own email address. Also replace your name with the placeholder in the body of the email. For ease of use, you can search for `***` and replace with the correct information. Run the `mitcap_reachouts.py`. For every email the script wants to send, your CLI will print the outgoing message and prompt you to enter `y` or `n` before sending the email. Once you hav cycled through every company contact in the `master_list.csv` or enter `q`, all of the companies you sent an email to will be saved to `personal_Reach-Outs.csv`.
 
 ## Contributing
 

@@ -68,7 +68,7 @@ for index, entry in filtered_df.iterrows():
     print(subject)
     print(msg["To"])
     print(body)
-    send_email = input("Do you want to send this email? (y/n): ")
+    send_email = input("Do you want to send this email? (y/n/q): ")
     if send_email.lower() == "y":
         with open(pdf_file_path, "rb") as pdf_file:
             pdf_attachment = MIMEApplication(pdf_file.read(), _subtype="pdf")
@@ -85,6 +85,9 @@ for index, entry in filtered_df.iterrows():
             "VC Contact Name": entry["firstname"],
             "VC Contact Email": entry["emails"],
         }
+    elif send_email.lower() == "q":
+        print("Quit application.")
+        break
     else:
         print("Email not sent. Skipped.")
 
