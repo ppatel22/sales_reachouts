@@ -47,5 +47,5 @@ no_no_list = [
     "Remus",
     "Innospark",
 ]
-reached_path = "F23_Sales_Reach-Outs.csv"
+reached_path = "companies_reached.csv"
 reached_df = pd.read_csv(reached_path)

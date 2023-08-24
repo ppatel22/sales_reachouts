@@ -10,7 +10,7 @@ from env_variables import no_no_list, reached_df, sample_df
 # %% Set your email server details
 smtp_server = "outgoing.mit.edu"
 smtp_port = 25
-email_address = "princep@mit.edu"  # Use your actual MIT email address
+email_address = "***@mit.edu"  # Use your actual MIT email address
 
 try:
     # Create an SMTP session
@@ -28,7 +28,7 @@ except smtplib.SMTPException as e:
 
 
 # %% List of recipient email addresses
-vc_database_path = "Folk_All_VCs_2023_08_05.csv"
+vc_database_path = "master_list.csv"
 vcs_df = pd.read_csv(vc_database_path)
 
 cc_emails = ["laraoz@mit.edu", "timmyd@mit.edu"]
@@ -61,7 +61,7 @@ for index, entry in filtered_df.iterrows():
     msg["Subject"] = subject
     vc_name = entry["companies"]
     firstName = entry["firstname"].split(" ")[0]
-    body = f"Hi {firstName}!\n\nMy name is Prince, and I'm one of the leaders of MIT's top VC/startup organizations, MIT Undergraduate Capital Partners. We’re part of Collegiate Capital Partners, a student organization dedicated to increasing student access to VC through hands-on investing experience, and I’m writing to see if we might find a fit to work with {vc_name} through one of our programs.\n\nOur two main value-adds:\n \u2022 Our diligence program pairs a team of students with a partner VC firm’s investment team, helping with deal flow and using resources exclusive to our university and student perspective.\n \u2022 Our sourcing program sources early startups from Harvard, MIT, Penn, Princeton, and Yale for our VC partners by leveraging partnerships, relationships, and domain expertise.\n\nOur group has worked with over 800 startups and 60+ VC firms, such as Sequoia, XFund, ACME, and DN Capital. Our members have proven experience at top VC firms, tech companies, PE firms, and financial institutions (General Catalyst, Bessemer Venture Partners, Facebook, Intel, Goldman/MS TMT) and are truly passionate about this kind of work.\n\n100% of your contribution goes towards initiatives to make a more open and diverse version of VC through student education, non-equity grants, and mentorship. We seek to nurture our university’s innovation ecosystem, and in addition to our diligence and sourcing programs, we offer partner firms like yours several opportunities for branding and campus recruiting.\n\nI’ve attached our information packet below for your reference—let me know if this sounds like a good fit for {vc_name}, and I’d love to chat!\n\nBest,\nPrince Patel"
+    body = f"Hi {firstName}!\n\nMy name is ***FIRSTNAME, and I'm one of the leaders of MIT's top VC/startup organizations, MIT Undergraduate Capital Partners. We’re part of Collegiate Capital Partners, a student organization dedicated to increasing student access to VC through hands-on investing experience, and I’m writing to see if we might find a fit to work with {vc_name} through one of our programs.\n\nOur two main value-adds:\n \u2022 Our diligence program pairs a team of students with a partner VC firm’s investment team, helping with deal flow and using resources exclusive to our university and student perspective.\n \u2022 Our sourcing program sources early startups from Harvard, MIT, Penn, Princeton, and Yale for our VC partners by leveraging partnerships, relationships, and domain expertise.\n\nOur group has worked with over 800 startups and 60+ VC firms, such as Sequoia, XFund, ACME, and DN Capital. Our members have proven experience at top VC firms, tech companies, PE firms, and financial institutions (General Catalyst, Bessemer Venture Partners, Facebook, Intel, Goldman/MS TMT) and are truly passionate about this kind of work.\n\n100% of your contribution goes towards initiatives to make a more open and diverse version of VC through student education, non-equity grants, and mentorship. We seek to nurture our university’s innovation ecosystem, and in addition to our diligence and sourcing programs, we offer partner firms like yours several opportunities for branding and campus recruiting.\n\nI’ve attached our information packet below for your reference—let me know if this sounds like a good fit for {vc_name}, and I’d love to chat!\n\nBest,\n***FULLNAME"
     msg.attach(MIMEText(body, "plain"))
 
     print("Preview of the email:")
@@ -79,7 +79,7 @@ for index, entry in filtered_df.iterrows():
         smtp_session.sendmail(email_address, entry["emails"], msg.as_string())
         print("Email sent.")
         sent_df.loc[len(sent_df)] = {
-            "My name": "Prince Patel",
+            "My name": "***FULLNAME",
             "Reach-Out Date": datetime.datetime.now().strftime("%m/%d/%Y"),
             "VC Firm": vc_name,
             "VC Contact Name": entry["firstname"],
